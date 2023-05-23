@@ -197,7 +197,6 @@ nav a:hover{
   object-fit: cover;
   filter: brightness(70%); /* Adjust the opacity of the video */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
-  background-color: #000;
 }
 
 .hero-content {
@@ -520,32 +519,32 @@ nav a:hover{
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Three boxes in a row */
   grid-template-rows: repeat(2, 1fr); /* Two rows of boxes */
-  grid-gap: 20px; /* Gap between boxes */
+  grid-gap: 30px; /* Gap between boxes */
+  flex-wrap: wrap;
   justify-items: center; /* Align items horizontally in the center */
   align-items: start; /* Align items vertically at the top */
 }
 
 
 .box {
+  justify-content:initial;
+  display:inline-block;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f2f2f2;
   padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
   text-align: center;
 }
 
 
-/* .textContainer {
+.textContainer {
   margin-left: 10px;
-} */
+}
 
-/* .title {
+.title {
   font-weight: bold;
   font-size: 18px;
-} */
+}
 
 
 .textContainer {
@@ -559,7 +558,10 @@ nav a:hover{
 
 .description {
   margin-top: 10px;
-  color: #666;
+  font-weight: 500;
+  line-height: 2;
+  --tw-text-opacity: 1;
+  color: rgb(124 139 161 / var(--tw-text-opacity));
 }
 
 .wedo{
@@ -575,6 +577,12 @@ nav a:hover{
     grid-gap: 20px;
     justify-items: center; /* Align items horizontally in the center */
     flex-wrap: wrap;
+  }
+
+  .box span img{
+    border: 2px solid var(--textColor);
+    border-radius: 50%;
+    padding: 20px;
   }
 }
 
@@ -608,7 +616,13 @@ nav a:hover{
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
   }
+
+  .box{
+    flex-direction: column;
+  }
 }
+
+
 
 /* Extra Small screens (xs) */
 @media (max-width: 575px) {
@@ -616,6 +630,10 @@ nav a:hover{
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 20px;
+  }
+
+  .box{
+    flex-direction: column;
   }
 }
 
@@ -625,17 +643,24 @@ nav a:hover{
 .tech-container {
   display: flex;
   justify-content: center;
-  height: 90vh;
+  height: 70vh;
   margin-top: 2rem;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: row;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  border-color: rgb(226, 232, 240);
+  background-color: rgb(226, 232, 240);
 }
 
 .tech-container-center {
-  background-color: #666;
+  display: flex;
   color: #eee;
-  border: 2px solid red;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .tech-container-post,
@@ -643,14 +668,31 @@ nav a:hover{
   flex-basis: 50%; /* Equal size for both boxes */
   padding: 20px;
   text-align: center;
+}
+
+.tech-container-post p{
+  color: rgb(36, 62, 99);
+}
+
+.tech-container-img div{
+  height: 100%;
+  background-color: transparent;
+}
+
+
+.tech-container-img div img{
+  width: 70%;
+  height: 50%;
+  background-color: #198754;
   border: 2px solid red;
 }
+
 
 @media (max-width: 767px) {
   .tech-container-center {
     flex-direction: column; /* Display in column on small screens */
   }
-  
+
   .tech-container-post,
   .tech-container-img {
     flex-basis: auto; /* Remove equal size constraint */
@@ -664,6 +706,11 @@ nav a:hover{
 
 .value-box {
   /* Set desired styling for the container */
+  margin: 0 auto;
+}
+
+.stan{
+  color: rgb(36, 62, 99);
 }
 
 .value-contents {
@@ -674,24 +721,40 @@ nav a:hover{
 
 .value-post {
   width: 65%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .value-post h3 {
   /* Set desired styles for the heading */
+  padding: 20px;
+  color: var(--secondaryColor);
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 .value-post h1 {
   /* Set desired styles for the main heading */
+  color: rgb(36, 62, 99);
+  padding: 20px;
+}
+
+.value-post h1 span {
+  /* Set desired styles for the main heading */
+  color: var(--btnBackground)
 }
 
 .value-post p {
   /* Set desired styles for the paragraph */
+  padding: 14px;
 }
 
 .value-post-stands {
   display: flex;
   justify-content: space-between;
   /* Set desired styles for the stands */
+  align-items: center;
 }
 
 .value-img {
@@ -703,9 +766,9 @@ nav a:hover{
   justify-content: center;
 }
 
-.value-img img {
-  /* Set desired styles for the image */
-}
+/* .value-img img {
+
+} */
 
 @media (max-width: 767px) {
   .value-contents {
@@ -721,10 +784,6 @@ nav a:hover{
     display: none; /* Hide the image container on small screens */
   }
 
-  .value-post p {
-    /* Set desired styles for the paragraph on small screens */
-  }
-
   .value-post-stands {
     flex-direction: column;
   }
@@ -738,6 +797,7 @@ nav a:hover{
   flex-wrap: wrap;
 }
 
+
 .first-corporate-content {
   flex: 1;
   display: flex;
@@ -745,9 +805,16 @@ nav a:hover{
   align-items: center;
 }
 
-h1,
-h2 {
+.first-corporate-content h1 {
   text-align: center;
+  color: var(--secondaryColor);
+  padding: 16px;
+}
+
+.first-corporate-content h2{
+  text-align: center;
+  color: rgb(36, 62, 99);
+  padding: 14px;
 }
 
 .corporate-image-container {
@@ -817,9 +884,10 @@ h2 {
   text-align: center;
 }
 
-.GetStarted__PrimaryBackgroundContainer-ca83ni-0 {
+/* .GetStarted__PrimaryBackgroundContainer-ca83ni-0 {
   /* Add background styles */
-}
+/* .GetStarted__PrimaryBackgroundContainer-ca83ni-0 {
+  } */
 
 .GetStarted__Text-ca83ni-4 {
   font-size: 1.5rem;
@@ -833,20 +901,101 @@ h2 {
   gap: 1rem;
 }
 
-.GetStarted__Link-ca83ni-6 {
-  /* Add button styles */
+
+/* pop .pop-contact -content */
+
+.pop-contact{
+  height: 60vh;
+  background-color: var(--bs-indigo);
+  margin: 3rem;
+  margin-bottom: 20vh;
+  border-radius: 8px;
 }
 
-.GetStarted__DecoratorBlobContainer-ca83ni-11 {
-  position: absolute;
-  top: 0;
-  right: 0;
+
+/* modal button styles */
+.modalbtn{
+  border-color: #dee2e6 !important;
+  color: rgb(245, 101, 101) !important;
+  font-weight: 400;
+  border-radius: 800px !important;
 }
 
-.GetStarted__DecoratorBlob1-ca83ni-12 {
-  /* Add styles for the first decorator blob */
+.modalbtn:hover {
+  background-color: rgb(247 250 252 / 1);
+  color: rgb(100 21 255 / 1);
 }
 
-.GetStarted__DecoratorBlob2-ca83ni-13 {
-  /* Add styles for the second decorator blob */
+/* footer */
+
+footer{
+
+  background-color: var(--bs-indigo);
+   color: rgb(36, 62, 99);
+   /* height: 85vh; */
+   margin-top: 3.4rem;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+}
+
+.top-footer{
+  padding: 8px;
+  border-bottom: 2px solid grey;
+  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+}
+
+.top-footer-content{
+ display: flex;
+ justify-content: space-around;
+}
+
+.tops{
+  display: flex;
+  flex-direction: column;
+}
+.tops h1{
+  color: white;
+  margin-bottom: 4px;
+}
+
+.upp{
+  color: white;
+  margin-bottom: 4px;
+}
+
+.tops h4{
+  color: white;
+}
+.tops nav{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.bottom-content{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.bottom-content h1{
+  color: white;
+}
+
+.social-links a {
+  display: inline-block;
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.social-links svg {
+  width: 24px;
+  height: 24px;
+  stroke: black; /* Set the stroke color */
+  stroke-width: 2px; /* Set the stroke width */
+  fill: none; /* Remove the fill color */
 }

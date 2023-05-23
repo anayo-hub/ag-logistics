@@ -5,17 +5,23 @@ function Corporate() {
     <div className='corporate-box'>
       <div className='corporate-container'>
         <div className="second-corporate-content">
-          <div>
-            <img src="example.jpg" alt="full" />
+          <div className='tech-container-img value-img'>
+          <div  >
+            {/* <img src="example.jpg" alt="full" /> */}
+            <img src="https://www.nemfra.com/static/media/Tech1.7bbe13a33bc0b7c95ecc.jpg" alt="tech-container" />
+          </div>
           </div>
         </div>
         <div className='first-corporate-content'>
           <h1>CORPORATE SOCIAL RESPONSIBILITY</h1>
           <h2>We partner with Franca Ogwudu foundation in rendering help in our communities through education scholarships and charities to the less privileged.</h2>
           <div className="corporate-image-container">
-            <div className="co-image-container">
-              <img src="your-image.jpg" alt="corporate" />
-            </div>
+              <div className='tech-container-img value-img'>
+                <div  >
+                  {/* <img src="example.jpg" alt="full" /> */}
+                  <img src="https://www.nemfra.com/static/media/Tech1.7bbe13a33bc0b7c95ecc.jpg" alt="tech-container" />
+                </div>
+              </div>
             <div className="corporate-navigation-container">
               <button className="co-nav-button" id="prev-button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">

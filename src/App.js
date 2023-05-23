@@ -10,7 +10,9 @@ import BoxGrid from "./BoxGrid";
 import TechContainer from "./components/TechContainer";
 import ValueBox from "./components/ValueBox";
 import Corporate from "./components/Corporate";
-// import PopContact from "./components/PopContact";
+import Footer from "./components/Footer";
+import PopContact from "./components/PopContact";
+import ButtonModal from "./components/ButtonModal";
 
 function App() {
   const services = "Freight over land using trucks of all sizes where possible keeping transit time and costs at their lowest. Monitoring the movement all over the route and tracking from source to delivery point";
@@ -37,6 +39,7 @@ function App() {
 
   return (
     <>
+      <div style={{padding: "0.1PX", overflow: "hidden"}}>
       <Navbar />
       <Hero />
       <Homeheading header={customHeading}/>
@@ -52,7 +55,9 @@ function App() {
       <TechContainer/>
       <ValueBox />
       <Corporate />
-      {/* <PopContact /> */}
+      <PopContact modal={<ButtonModal />} />
+      <Footer />
+      </div>
     </>
   );
 }

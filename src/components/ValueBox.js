@@ -17,10 +17,10 @@ function ValueBox() {
           </div>
           <CustomBtn />
         </div>
-        <div className='value-img'>
-          <div>
-            <img src="example.png" alt="values" />
-          </div>
+        <div className='tech-container-img value-img'>
+            <div>
+                <img src="https://www.nemfra.com/static/media/Tech1.7bbe13a33bc0b7c95ecc.jpg" alt="tech-container" />
+            </div>
         </div>
       </div>
     </div>

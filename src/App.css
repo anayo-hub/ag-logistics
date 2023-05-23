@@ -1,0 +1,12 @@
+/* modal button styles */
+.modalbtn{
+    border-color: #dee2e6 !important;
+    color: rgb(245, 101, 101) !important;
+    font-weight: 400;
+    border-radius: 800px !important;
+  }
+  
+  .modalbtn:hover {
+    background-color: rgb(247 250 252 / 1);
+    color: rgb(100 21 255 / 1);
+  }
