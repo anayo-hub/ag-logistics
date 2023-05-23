@@ -6,7 +6,7 @@ import bgImg from "../src/assets/background-image.jpg"
 import Homeheading from "./components/Homeheading";
 import Banner from "./components/Banner";
 import CustomInput from "./components/CustomInput";
-import BoxGrid from "./BoxGrid";
+import BoxGrid from "./components/BoxGrid";
 import TechContainer from "./components/TechContainer";
 import ValueBox from "./components/ValueBox";
 import Corporate from "./components/Corporate";
